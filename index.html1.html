@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="La Previa: kits de bebidas listos para llevar, Party Box y combos para previa."
+    />
+    <meta name="theme-color" content="#101010" />
+    <title>Hay Previa! | ¿Hay previa hoy?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="wrap nav">
+      <a class="logo" href="#inicio"><span>Hay Previa!</span></a>
+      <nav class="navlinks">
+        <a href="#combos">Combos</a><a href="#armar">Armá tu previa</a
+        ><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
+      </nav>
+      <a class="navcta" href="#armar">Empezar</a>
+    </header>
+    <main>
+      <section class="wrap hero" id="inicio">
+        <div>
+          <div class="eyebrow">Kits listos · entregas · buena previa</div>
+          <h1>¿Hay <em>previa</em> hoy?</h1>
+          <p>
+            La previa lista para llevar. Armá tu combo, elegí tus bebidas y
+            disfrutá más con menos vueltas.
+          </p>
+          <div class="actions">
+            <a
+              class="primary"
+              href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+              target="_blank"
+              >📲 Pedir por WhatsApp</a
+            ><a class="ghost" href="#combos">Ver combos ↓</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="halo"></div>
+          <div class="box">
+            <img
+              class="party-photo"
+              src="assets/jarra-15l.png"
+              alt="Jarra de Fernet con Coca-Cola de 1,5 litros"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Todo resuelto</div>
+            <h2>La previa sin vueltas</h2>
+          </div>
+        </div>
+        <div class="benefits">
+          <div class="benefit">
+            <b>⚡ Armado al instante</b
+            ><span>Listo para retirar o recibir.</span>
+          </div>
+          <div class="benefit">
+            <b>🧊 Hielo incluido</b><span>Frío desde el primer brindis.</span>
+          </div>
+          <div class="benefit">
+            <b>🍬 Golosinas incluidas</b
+            ><span>El toque que completa el kit.</span>
+          </div>
+          <div class="benefit">
+            <b>🎉 Lista para disfrutar</b><span>Vos ponés la música.</span>
+          </div>
+        </div>
+      </section>
+      <section class="wrap" id="combos">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Elegí tu formato</div>
+            <h2>Combos que salen</h2>
+          </div>
+          <p>
+            Desde una previa express hasta la fiesta completa. El Party Box es
+            nuestro favorito.
+          </p>
+        </div>
+        <div class="products">
+          <article class="card">
+            <div class="visual">500 ML</div>
+            <h3>Kit Individual</h3>
+            <ul>
+              <li>Vaso premium</li>
+              <li>Bebida + hielo</li>
+              <li>Golosina</li>
+            </ul>
+            <div class="price">$6.500</div>
+            <button class="primary" onclick="preset('individual')">
+              Elegir kit
+            </button>
+          </article>
+          <article class="card">
+            <div class="visual">1 L</div>
+            <h3>Kit XL</h3>
+            <ul>
+              <li>Vaso XL</li>
+              <li>Doble carga</li>
+              <li>Hielo + golosinas</li>
+            </ul>
+            <div class="price">$10.500</div>
+            <button class="primary" onclick="preset('xl')">Elegir kit</button>
+          </article>
+          <article class="card featured">
+            <span class="badge">⭐ MÁS VENDIDO</span>
+            <div class="visual">PARTY BOX</div>
+            <h3>Party Box 1,5 L</h3>
+            <ul>
+              <li>Dispenser con canilla</li>
+              <li>Miniaturas a elección</li>
+              <li>Energética o gaseosa</li>
+              <li>Hielo + golosinas</li>
+            </ul>
+            <div class="price">$15.000</div>
+            <button class="primary" onclick="preset('party')">
+              Armar Party Box
+            </button>
+          </article>
+        </div>
+      </section>
+      <section class="wrap" id="armar">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Configurador interactivo</div>
+            <h2>Armá tu propia previa</h2>
+          </div>
+          <p>
+            Personalizá cada detalle. El precio y las promos se actualizan en
+            tiempo real.
+          </p>
+        </div>
+        <div class="config">
+          <div class="progress"><i></i></div>
+          <div class="config-grid">
+            <div>
+              <div class="step">
+                <h3>01 · Elegí el tamaño</h3>
+                <div class="options" id="sizes">
+                  <button
+                    class="option"
+                    data-v="individual"
+                    onclick="size(this)"
+                  >
+                    <b>Individual</b><small>500 ml · $6.500</small></button
+                  ><button class="option" data-v="xl" onclick="size(this)">
+                    <b>XL</b><small>1 litro · $10.500</small></button
+                  ><button
+                    class="option selected"
+                    data-v="party"
+                    onclick="size(this)"
+                  >
+                    <b>Party Box</b><small>1,5 litros · $15.000</small>
+                  </button>
+                </div>
+              </div>
+              <div class="step">
+                <h3>02 · Elegí la bebida base</h3>
+                <div class="options" id="drinks">
+                  <button
+                    class="option"
+                    data-v="Vodka"
+                    onclick="drink(this, 'Vodka')"
+                  >
+                    Vodka</button
+                  ><button
+                    class="option selected"
+                    data-v="Fernet"
+                    onclick="drink(this, 'Fernet')"
+                  >
+                    Fernet</button
+                  ><button
+                    class="option"
+                    data-v="Gin"
+                    onclick="drink(this, 'Gin')"
+                  >
+                    Gin</button
+                  ><button
+                    class="option"
+                    data-v="Ron"
+                    onclick="drink(this, 'Ron')"
+                  >
+                    Ron</button
+                  ><button
+                    class="option"
+                    data-v="Whisky"
+                    onclick="drink(this, 'Whisky')"
+                  >
+                    Whisky</button
+                  ><button
+                    class="option"
+                    data-v="Tequila"
+                    onclick="drink(this, 'Tequila')"
+                  >
+                    Tequila
+                  </button>
+                </div>
+              </div>
+              <div class="step">
+                <h3>03 · Elegí el mezclador</h3>
+                <div class="options" id="mixers">
+                  <button
+                    class="option selected"
+                    data-v="Coca-Cola"
+                    onclick="mixer(this, 'Coca-Cola')"
+                  >
+                    Coca-Cola</button
+                  ><button
+                    class="option"
+                    data-v="Pepsi"
+                    onclick="mixer(this, 'Pepsi')"
+                  >
+                    Pepsi</button
+                  ><button
+                    class="option"
+                    data-v="Sprite"
+                    onclick="mixer(this, 'Sprite')"
+                  >
+                    Sprite</button
+                  ><button
+                    class="option"
+                    data-v="Speed"
+                    onclick="mixer(this, 'Speed')"
+                  >
+                    Speed</button
+                  ><button
+                    class="option"
+                    data-v="Red Bull"
+                    onclick="mixer(this, 'Red Bull')"
+                  >
+                    Red Bull <small>+$1.500</small></button
+                  ><button
+                    class="option"
+                    data-v="Jugo"
+                    onclick="mixer(this, 'Jugo')"
+                  >
+                    Jugo</button
+                  ><button
+                    class="option"
+                    data-v="Agua tónica"
+                    onclick="mixer(this, 'Agua tónica')"
+                  >
+                    Agua tónica
+                  </button>
+                </div>
+                <div id="compat"></div>
+              </div>
+              <div class="step">
+                <h3>04 · Elegí tus miniaturas</h3>
+                <div class="checks" id="shots">
+                  <label><input type="radio" name="shots" value="1" /> 1</label
+                  ><label><input type="radio" name="shots" value="2" /> 2</label
+                  ><label><input type="radio" name="shots" value="3" /> 3</label
+                  ><label><input type="radio" name="shots" value="4" /> 4</label
+                  ><label><input type="radio" name="shots" value="5" /> 5</label
+                  ><label
+                    ><input type="radio" name="shots" value="6" /> 6</label
+                  >
+                </div>
+                <p class="hint">
+                  La primera miniatura está incluida; cada adicional suma
+                  $1.000. Party Box + 3 o más miniaturas: 10% off.
+                </p>
+              </div>
+              <div class="step">
+                <h3>05 · Agregados</h3>
+                <div class="checks">
+                  <label
+                    ><input
+                      type="checkbox"
+                      data-name="Hielo"
+                      data-p="0"
+                      checked
+                      onchange="extra(this)"
+                    />
+                    Hielo</label
+                  ><label
+                    ><input
+                      type="checkbox"
+                      data-name="Golosinas"
+                      data-p="0"
+                      checked
+                      onchange="extra(this)"
+                    />
+                    Golosinas</label
+                  ><label
+                    ><input
+                      type="checkbox"
+                      data-name="Vasos extra"
+                      data-p="700"
+                      onchange="extra(this)"
+                    />
+                    Vasos extra +$700</label
+                  ><label
+                    ><input
+                      type="checkbox"
+                      data-name="Sorbetes"
+                      data-p="300"
+                      onchange="extra(this)"
+                    />
+                    Sorbetes +$300</label
+                  ><label
+                    ><input
+                      type="checkbox"
+                      data-name="Shot adicional"
+                      data-p="800"
+                      onchange="extra(this)"
+                    />
+                    Shot adicional +$800</label
+                  ><label
+                    ><input
+                      type="checkbox"
+                      data-name="Energética extra"
+                      data-p="1500"
+                      onchange="extra(this)"
+                    />
+                    Energética extra +$1.500</label
+                  >
+                </div>
+              </div>
+            </div>
+            <aside class="summary">
+              <h3>Tu previa</h3>
+              <div class="line">
+                <span>Tamaño</span><b id="ss">Party Box 1,5 L</b>
+              </div>
+              <div class="line"><span>Bebida</span><b id="sd">Fernet</b></div>
+              <div class="line">
+                <span>Mezclador</span><b id="sm">Coca-Cola</b>
+              </div>
+              <div class="line"><span>Miniaturas</span><b id="sn">3</b></div>
+              <div class="line">
+                <span>Extras</span><b id="se">Hielo, Golosinas</b>
+              </div>
+              <div class="line">
+                <span>Precio base</span><b id="base">$15.000</b>
+              </div>
+              <div class="line">
+                <span>Adicionales</span><b id="add">$2.000</b>
+              </div>
+              <div class="notice ok" id="promo">
+                🎉 Promo aplicada: 10% off por Party Box + 3 miniaturas
+              </div>
+              <div class="line">
+                <span>Ahorro</span><b id="disc">-$1.700</b>
+              </div>
+              <div class="line total">
+                <span>Total</span><b id="total">$15.300</b>
+              </div>
+              <button
+                class="primary"
+                style="width: 100%; margin-top: 10px"
+                onclick="send()"
+              >
+                📲 Pedir por WhatsApp</button
+              ><button
+                class="ghost"
+                style="width: 100%; margin-top: 9px"
+                onclick="save()"
+              >
+                💾 Guardar mi previa
+              </button>
+              <div id="valid"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section class="wrap" id="galeria">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">#LaPreviaLista</div>
+            <h2>La previa se comparte</h2>
+          </div>
+          <p>Etiquetanos en tus juntadas y aparecé en nuestra galería.</p>
+        </div>
+        <div class="gallery">
+          <div class="tile art-tile">
+            <svg class="art-svg" viewBox="0 0 300 230">
+              <rect width="300" height="230" rx="18" fill="#161616" />
+              <circle cx="63" cy="55" r="28" fill="#eaff00" />
+              <path d="M50 52h26M63 39v32" stroke="#111" stroke-width="6" />
+              <path d="M92 180h80l-10-95h-60z" fill="#f2f2e8" />
+              <rect x="104" y="118" width="56" height="35" fill="#111" />
+              <text
+                x="132"
+                y="138"
+                fill="#eaff00"
+                font-size="9"
+                text-anchor="middle"
+                font-weight="bold"
+              >
+                PARTY
+              </text>
+              <path d="M210 177h38l-6-75h-27z" fill="#ff6b2b" />
+              <path d="M217 102h24" stroke="#eaff00" stroke-width="5" />
+              <text
+                x="150"
+                y="210"
+                fill="#fff"
+                font-size="14"
+                text-anchor="middle"
+                font-weight="bold"
+              >
+                PARTY VIBES
+              </text>
+            </svg>
+          </div>
+          <div class="tile art-tile">
+            <svg class="art-svg" viewBox="0 0 300 230">
+              <rect width="300" height="230" rx="18" fill="#232323" />
+              <path d="M42 171h216" stroke="#eaff00" stroke-width="5" />
+              <path
+                d="M78 165V92h48v73M174 165V72h48v93"
+                fill="#f2f2e8"
+                stroke="#111"
+                stroke-width="4"
+              />
+              <rect x="84" y="110" width="36" height="22" fill="#111" />
+              <rect x="180" y="90" width="36" height="22" fill="#111" />
+              <circle cx="78" cy="57" r="22" fill="#ff6b2b" />
+              <circle cx="222" cy="46" r="15" fill="#eaff00" />
+              <text
+                x="150"
+                y="205"
+                fill="#fff"
+                font-size="14"
+                text-anchor="middle"
+                font-weight="bold"
+              >
+                KIT LISTO
+              </text>
+            </svg>
+          </div>
+          <div class="tile art-tile">
+            <svg class="art-svg" viewBox="0 0 300 230">
+              <rect width="300" height="230" rx="18" fill="#101010" />
+              <path
+                d="M75 52h45l-7 125H82zM180 52h45l-7 125h-31z"
+                fill="#ff6b2b"
+                stroke="#fff"
+                stroke-width="3"
+              />
+              <path d="M85 80h25M190 80h25" stroke="#eaff00" stroke-width="6" />
+              <path d="M50 178h200" stroke="#eaff00" stroke-width="5" />
+              <circle cx="62" cy="45" r="8" fill="#eaff00" />
+              <circle cx="246" cy="35" r="8" fill="#ff6b2b" />
+              <text
+                x="150"
+                y="208"
+                fill="#fff"
+                font-size="14"
+                text-anchor="middle"
+                font-weight="bold"
+              >
+                BRINDIS QUE ARRANCAN BIEN
+              </text>
+            </svg>
+          </div>
+          <div class="tile art-tile">
+            <svg class="art-svg" viewBox="0 0 300 230">
+              <rect width="300" height="230" rx="18" fill="#191919" />
+              <circle cx="70" cy="68" r="28" fill="#eaff00" />
+              <circle cx="150" cy="48" r="20" fill="#ff6b2b" />
+              <circle cx="230" cy="70" r="26" fill="#eaff00" />
+              <path
+                d="M47 185l23-95 23 95M127 185l23-95 23 95M207 185l23-95 23 95"
+                fill="#f2f2e8"
+                stroke="#111"
+                stroke-width="4"
+              />
+              <path d="M35 185h230" stroke="#ff6b2b" stroke-width="7" />
+              <text
+                x="150"
+                y="216"
+                fill="#fff"
+                font-size="14"
+                text-anchor="middle"
+                font-weight="bold"
+              >
+                TU EVENTO, NUESTRO KIT
+              </text>
+            </svg>
+          </div>
+        </div>
+      </section>
+      <!-- Reseñas ocultas: reemplazá por opiniones reales de clientes y quitá este comentario.
+<section class="wrap"><div class="section-head"><div><div class="eyebrow">Lo dicen ellos</div><h2>Reseñas reales</h2></div></div><div class="quotes"><div class="testimonial"><div class="stars">★★★★★</div><p>“La Party Box llegó helada y con todo. Nos salvó el cumple.”</p><small>— Sofi M. · Palermo</small></div><div class="testimonial"><div class="stars">★★★★★</div><p>“El configurador está buenísimo, elegimos todo desde el celu.”</p><small>— Nico R. · Belgrano</small></div><div class="testimonial"><div class="stars">★★★★★</div><p>“Presentación premium y cero vueltas. Repetimos seguro.”</p><small>— Agus P. · Villa Urquiza</small></div></div></section>
+-->
+      <section class="wrap" id="contacto">
+        <div class="contact-grid">
+          <div>
+            <div class="eyebrow">¿Hablamos?</div>
+            <h2
+              style="
+                font:
+                  700 clamp(44px, 9vw, 64px)/0.9 &quot;Barlow Condensed&quot;,
+                  Impact,
+                  sans-serif;
+                margin: 12px 0;
+              "
+            >
+              Tu próxima previa empieza acá.
+            </h2>
+            <p style="color: var(--muted)">
+              Consultas, eventos y pedidos especiales. Respondemos por WhatsApp.
+            </p>
+            <a
+              class="primary"
+              href="https://wa.me/5491123456789"
+              target="_blank"
+              >Abrir WhatsApp</a
+            >
+          </div>
+          <form class="contact" onsubmit="contact(event)">
+            <label
+              >Nombre<input
+                required
+                minlength="3"
+                id="cn"
+                placeholder="Tu nombre" /></label
+            ><label
+              >Email<input
+                required
+                type="email"
+                id="ce"
+                placeholder="hola@email.com" /></label
+            ><label
+              >Mensaje<textarea
+                required
+                id="cm"
+                placeholder="Contanos qué estás armando..."
+              ></textarea></label
+            ><button class="primary">Enviar consulta</button>
+            <div id="cs"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap footer">
+      <span>© 2026 La Previa Lista · Kits para previa y eventos</span
+      ><span>Instagram · TikTok · Facebook · WhatsApp</span
+      ><span class="legal"
+        >Beber con moderación. Prohibida su venta a menores de 18 años.</span
+      >
+    </footer>
+    <a
+      class="wa"
+      href="https://wa.me/5491123456789"
+      target="_blank"
+      aria-label="WhatsApp"
+      >💬</a
+    >
+    <script src="script.js" defer></script>
+  </body>
+</html>
